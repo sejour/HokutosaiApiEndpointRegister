@@ -1,0 +1,85 @@
+#
+# HokutosaiApi2016 Endpoints
+#
+# EndpointsFile
+# @Category
+# Method Path ApiUserPermissionAllow [(AccountRequired)(AccountPermissionAllow)]
+# AccountRequired: - = optional, + = required
+# ApiUserPermissionAllow: a = admin, c = client, m = management
+# AccountPermissionAllow: r = root, g = general, m = management
+#
+
+@news
+get 	/news/timeline 						acm 	-rgm
+get		/news/topics						acm 	-rgm
+get		/news/{id}/details 					acm 	-rgm
+post 	/news/{id}/likes 					ac 		+rg
+delete 	/news/{id}/likes 					ac 		+rg
+post 	/news/article 						am 		+rm
+delete 	/news/{id} 							am 		+rm
+
+@media
+post 	/media 								am 		+rm
+
+@events
+get 	/events/enumeration 				acm
+get 	/events 							acm 	-rgm
+get     /events/schedules 					acm 	-rgm
+get 	/events/topics						acm 	-rgm
+get 	/events/{id}/details 				acm 	-rgm
+post 	/events/{id}/likes 					ac 		+rg
+delete 	/events/{id}/likes 					ac 		+rg
+put 	/events/{id}/times 					am 		+rm
+put 	/events/{id}/feature 				am 		+rm
+
+@shops
+get		/shops							 	acm 	-rgm
+get		/shops/enumeration					acm
+get		/shops/{id}						 	acm 	-rgm
+get		/shops/{id}/details					acm 	-rgm
+get		/shops/{id}/assessments				acm 	-rgm
+post	/shops/{id}/assessment				ac 		+rg
+delete	/shops/{id}/assessment				ac 		+rg
+post 	/shops/assessment/{id}/report       acm     -rgm
+post 	/shops/{id}/likes					ac 		+rg
+delete 	/shops/{id}/likes					ac 		+rg
+
+@exhibitions
+get 	/exhibitions						acm 	-rgm
+get 	/exhibitions/enumeration 			acm
+get 	/exhibitions/{id}					acm 	-rgm
+get 	/exhibitions/{id}/details 			acm 	-rgm
+get 	/exhibitions/{id}/assessments 		acm 	-rgm
+post 	/exhibitions/{id}/assessment		ac 		+rg
+delete 	/exhibitions/{id}/assessment 		ac 		+rg
+post 	/exhibitions/assessment/{id}/report acm     -rgm
+post 	/exhibitions/{id}/likes				ac 		+rg
+delete 	/exhibitions/{id}/likes 			ac 		+rg
+
+@contests
+get 	/contests 							acm 	+rgm
+get  	/contests/{id}/details 				acm 	+rgm
+get 	/contests/{id}/entrys 				acm 	+rgm
+get 	/contests/{id}/entrys/{id} 			acm 	+rgm
+post 	/contests/{id}/entrys/{id}/yell		ac 		+rg
+delete 	/contests/{id}/entrys/{id}/yell		ac 		+rg
+get 	/contests/champions					acm 	+rgm
+get 	/contests/{id}/champions 			acm 	+rgm
+get 	/contests/release_config 			am 		+rgm
+put 	/contest/release_config 			am 		+rm
+
+@locations
+get 	/locations/places 					acm
+get 	/locations/accesses/school_bus 		acm
+
+@accounts
+get 	/accounts/new 						ac
+get 	/accounts/profile 					acm 	+rgm
+put 	/accounts/profile 					acm 	+rgm
+post  	/accounts/authorization 			acm
+
+@assessments
+get 	/assessments/reports/causes 		acm
+
+@system
+get 	/system/config 						acm

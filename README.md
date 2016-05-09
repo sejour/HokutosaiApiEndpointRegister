@@ -1,0 +1,5 @@
+# HokutosaiApiEndpointRegister
+HokutosaiAPIのendpointをDBに登録するためのツールです。
+
+HokutosaiAPIのendpoint定義ファイル(epファイル)をSQLに変換し出力します。
+出力されたSQLファイルをHokutosaiDBServerに対して実行することでendpointが登録されます。
